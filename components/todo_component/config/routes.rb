@@ -1,4 +1,5 @@
 TodoComponent::Engine.routes.draw do
   root to: "dashboard#index"
-  resources :dashboard, only: %i[index new create]
+  get "/todo/new", to: "dashboard#new"
+  post "/todo", to: "dashboard#create"
 end

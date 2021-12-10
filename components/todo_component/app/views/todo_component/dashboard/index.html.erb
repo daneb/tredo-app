@@ -10,7 +10,7 @@
                 <h5 class="card-title"><%= list[1] %></h5>
               </div>
               <div class="col-md-6 text-right">
-                <%= link_to '✚ Add', new_dashboard_path, :class => "btn btn-primary btn-sm justify-content-end" %>
+                <%= link_to '✚ Add', todo_new_path, :class => "btn btn-primary btn-sm justify-content-end" %>
               </div>
             </div>
             <% todos_by_list(list[0]).each do |action| %>

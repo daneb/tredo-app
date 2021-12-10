@@ -24,11 +24,11 @@ module TodoComponent
     end
 
     def create_a_todo(name)
-      response = JSON.parse(Tredo.create(name))
-      byebug
+      response = JSON.parse(Tredo.create_todo(name))
       if response["status"] == "success"
         return JSON.parse(response["data"]["result"])
       end
+      []
     end
   end
 end
