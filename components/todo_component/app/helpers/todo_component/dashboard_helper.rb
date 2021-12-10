@@ -14,7 +14,9 @@ module TodoComponent
     end
 
     def todos_by_list(id)
-      response = JSON.parse(Tredo.todos_for_list(id))
+      response = Rails.cache.fetch("/dashboard/todos_by_list/#{id}", expires_in: 10.minutes) do
+        JSON.parse(Tredo.todos_for_list(id))
+      end
       if response["status"] == "success"
         return JSON.parse(response["data"]["result"])
                  .map { |a| [a["data"]["card"]["id"], a["data"]["card"]["name"]] }
