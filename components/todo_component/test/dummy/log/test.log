@@ -1,0 +1,31 @@
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+TodoComponent::DashboardControllerTest: test_should_get_index
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+TodoComponentTest: test_it_has_a_version_number
+-----------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+TodoComponent::DashboardControllerTest: test_should_get_index
+-------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+TodoComponent::DashboardControllerTest: test_should_get_index
+-------------------------------------------------------------
+Started GET "/todo_component/dashboard/index" for 127.0.0.1 at 2021-12-10 03:54:07 +0200
+Processing by TodoComponent::DashboardController#index as HTML
+  Rendering layout /Users/danebalia/Documents/Personal/Source/ruby/tredo-app/components/todo_component/app/views/layouts/todo_component/application.html.erb
+  Rendering /Users/danebalia/Documents/Personal/Source/ruby/tredo-app/components/todo_component/app/views/todo_component/dashboard/index.html.erb within layouts/todo_component/application
+  Rendered /Users/danebalia/Documents/Personal/Source/ruby/tredo-app/components/todo_component/app/views/todo_component/dashboard/index.html.erb within layouts/todo_component/application (Duration: 1.2ms | Allocations: 327)
+  Rendered layout /Users/danebalia/Documents/Personal/Source/ruby/tredo-app/components/todo_component/app/views/layouts/todo_component/application.html.erb (Duration: 38.2ms | Allocations: 12314)
+Completed 200 OK in 56ms (Views: 45.1ms | ActiveRecord: 0.0ms | Allocations: 16147)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
