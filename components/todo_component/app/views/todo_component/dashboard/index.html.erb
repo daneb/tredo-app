@@ -10,7 +10,11 @@
                 <h5 class="card-title"><%= list[1] %></h5>
               </div>
               <div class="col-md-6 text-right">
+                <% if (list == "To Do") %>
                 <%= link_to '✚ Add', todo_new_path, :class => "btn btn-primary btn-sm justify-content-end" %>
+                <% else %>
+                <%= link_to '✚ Add', '', :class => "btn btn-primary btn-sm justify-content-end" %>
+                <% end %>
               </div>
             </div>
             <% todos_by_list(list[0]).each do |action| %>
