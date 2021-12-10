@@ -9,7 +9,6 @@ module TodoComponent
                  .select { |todo| todo["closed"] == false }
                  .map { |todo| [todo["id"], todo["name"]] }
       end
-
       []
     end
 
@@ -21,8 +20,15 @@ module TodoComponent
         return JSON.parse(response["data"]["result"])
                  .map { |a| [a["data"]["card"]["id"], a["data"]["card"]["name"]] }
       end
+      []
     end
 
-    []
+    def create_a_todo(name)
+      response = JSON.parse(Tredo.create(name))
+      byebug
+      if response["status"] == "success"
+        return JSON.parse(response["data"]["result"])
+      end
+    end
   end
 end

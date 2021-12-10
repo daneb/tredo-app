@@ -1,11 +1,4 @@
 <!-- inside app/views/welcome/index.html.erb -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #343951;">
-  <div class="container-fluid justify-content-center">
-    <div class="row">
-      <a class="navbar-brand" href="#">The Pizza Project 🍕</a>
-    </div>
-  </div>
-</nav>
 <div class="container-fluid">
   <div class="row justify-content-center justify-content-equally mt-5">
     <% todo_lists.each do |list| %>
@@ -17,7 +10,7 @@
                 <h5 class="card-title"><%= list[1] %></h5>
               </div>
               <div class="col-md-6 text-right">
-                <button type="button" class="btn btn-primary btn-sm justify-content-end"  style="background-color: #5EA5EE">✚ Add</button>
+                <%= link_to '✚ Add', new_dashboard_path, :class => "btn btn-primary btn-sm justify-content-end" %>
               </div>
             </div>
             <% todos_by_list(list[0]).each do |action| %>
