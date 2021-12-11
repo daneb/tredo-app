@@ -55,12 +55,14 @@ Jsender::Json.error
  => "{\"status\":\"error\",\"message\":\"An error has occurred\"}"
 ```
 
+4. The Gem uses Rails credentials to be fed the Trello Token and API Key
+
 ### Caveats
 
 1. Not YET a rails 🛤 expert - so I fall flat in terms of the DSL nuances and uses-cases. I did however make best effort to follow the [Rails Style Guide](https://rails.rubystyle.guide/) and best practices in areas I touched.
 2. [ ] In terms of seams I used [component-based rails](https://cbra.info). This concept is 4 years old and not perfect. Modular Rails appears to me a hard problem to solve as I scoured the internet. I stumbled onto Engems but even then (still 2 years back) and complexity in the generators. This ALL makes sense given the design intent - "majestic monolith". [Hanami](https://guides.hanamirb.org/v1.3/architecture/overview/), origionally known as Lotus.RB, lends itself to a clean architecture.
 3. I'm largely a back-end engineer 🤓.
-4. Caching is being used but for action retrieval per list.
+4. Caching is being used but for action retrieval per list. This has an expiry of 10 minutes but based on any form of webhook (good or bad) this cache will be invalidated.
 
 ### What would I have done differently?
 
@@ -77,27 +79,30 @@ Jsender::Json.error
    - Fixed the issue with Sprockets being a hard dependency on /app
 6. Disabled the use of the DB in Rails.
 7. More resiliency around error handling and support in the DashboardHelper.
-8. Found a better way to allow the user to not be concerned with secrets, perhaps using rails secrets and allowing Rails to seed the Gem.
+8. I think the code could be a-lot cleaner all round. A few more refactors and it could be much more condense. I particularly didn't like the non-DRY interface for Tredo gem.
 
 ### Development Setup
 
-1. To enable cache support in development
+1. To enable/disable cache support in development
 
 ```sh
 # rails dev:cache
 ```
 
 2. As per requirement webhook support through Ngrok.
-3. For the RubyGem (Tredo), you will need to export tokens supplied
+3. Tredo app will need to bundle installs:
 
 ```sh
-export TOKEN_KEY=
-export TOKEN_PROVIDER=
+$ cd components/todo-component/
+$ bundle install
+
+// In root of web app
+$ bundle install
 ```
 
-### Key Resources
+4. Tredo Gem is part of todo-component gemspec.
 
-rams
+### Key Resources
 
 1. [Rails Style Guide](https://rails.rubystyle.guide/)
 2. [Component-based architecture](https://cbra.info/)
