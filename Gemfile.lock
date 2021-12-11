@@ -3,7 +3,7 @@ PATH
   specs:
     todo_component (0.1.0)
       rails (~> 6.1.4, >= 6.1.4.1)
-      tredo (~> 0.1.3)
+      tredo (~> 0.1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -196,7 +196,7 @@ GEM
     sqlite3 (1.4.2)
     thor (1.1.0)
     tilt (2.0.10)
-    tredo (0.1.3)
+    tredo (0.1.4)
       jsender (~> 2.2.0)
       rest-client (~> 2.1.0)
     turbolinks (5.2.1)
