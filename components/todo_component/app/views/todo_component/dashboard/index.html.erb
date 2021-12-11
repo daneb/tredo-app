@@ -10,18 +10,20 @@
                 <h5 class="card-title"><%= list[1] %></h5>
               </div>
               <div class="col-md-6 text-right">
-                <% if (list == "To Do") %>
+                <% if (list[1] == "To Do") %>
                 <%= link_to '✚ Add', todo_new_path, :class => "btn btn-primary btn-sm justify-content-end" %>
                 <% else %>
                 <%= link_to '✚ Add', '', :class => "btn btn-primary btn-sm justify-content-end" %>
                 <% end %>
               </div>
             </div>
-            <% todos_by_list(list[0]).each do |action| %>
-            <div class="row pb-2">
-              <input class="form-control" style="background-color: white" readonly type="text" placeholder="<%= action[1] %>">
-            </div>
-            <% end %>
+            <% unless list[0].nil? || list[0].empty? %>
+                <% todos_by_list(list[0]).each do |action| %>
+                <div class="row pb-2">
+                <input class="form-control" style="background-color: white" readonly type="text" placeholder="<%= action[1] %>">
+                </div>
+                <% end %>
+             <% end %>
            </div>
         </div>
     </div>
