@@ -80,6 +80,7 @@ Jsender::Json.error
 6. Disabled the use of the DB in Rails.
 7. More resiliency around error handling and support in the DashboardHelper.
 8. I think the code could be a-lot cleaner all round. A few more refactors and it could be much more condense. I particularly didn't like the non-DRY interface for Tredo gem.
+9. DRY up the validation in the Gem
 
 ### Development Setup
 
@@ -90,6 +91,11 @@ Jsender::Json.error
 ```
 
 2. As per requirement webhook support through Ngrok.
+
+```sh
+# ngrok http 4040
+```
+
 3. Tredo app will need to bundle installs:
 
 ```sh
