@@ -10,6 +10,7 @@ module TodoComponent
     def create
       if helpers.create_a_todo(params[:name])
         flash[:notice] = "Created successfully."
+        Rails.cache.clear
         redirect_to action: "index"
       else
         flash.now[:error] = "Failed to created todo."
@@ -31,9 +32,6 @@ module TodoComponent
     rescue NoMethodError
       logger.warn "Failure in webhooks"
       render status: 500, json: @controller
-    ensure
-      logger.debug "Invalidating all cache."
-      Rails.cache.clear
     end
   end
 end

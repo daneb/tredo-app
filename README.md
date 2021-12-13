@@ -62,7 +62,6 @@ Jsender::Json.error
 1. Not YET a rails 🛤 expert - so I fall flat in terms of the DSL nuances and uses-cases. I did however make best effort to follow the [Rails Style Guide](https://rails.rubystyle.guide/) and best practices in areas I touched.
 2. [ ] In terms of seams I used [component-based rails](https://cbra.info). This concept is 4 years old and not perfect. Modular Rails appears to me a hard problem to solve as I scoured the internet. I stumbled onto Engems but even then (still 2 years back) and complexity in the generators. This ALL makes sense given the design intent - "majestic monolith". [Hanami](https://guides.hanamirb.org/v1.3/architecture/overview/), origionally known as Lotus.RB, lends itself to a clean architecture.
 3. I'm largely a back-end engineer 🤓.
-4. Caching is being used but for action retrieval per list. This has an expiry of 10 minutes but based on any form of webhook (good or bad) this cache will be invalidated.
 
 ### What would I have done differently?
 
@@ -84,19 +83,13 @@ Jsender::Json.error
 
 ### Development Setup
 
-1. To enable/disable cache support in development
-
-```sh
-# rails dev:cache
-```
-
-2. As per requirement webhook support through Ngrok.
+1. As per requirement webhook support through Ngrok.
 
 ```sh
 # ngrok http 4040
 ```
 
-3. Tredo app will need to bundle installs:
+2. Tredo app will need to bundle installs:
 
 ```sh
 $ cd components/todo-component/
@@ -106,7 +99,7 @@ $ bundle install
 $ bundle install
 ```
 
-4. Tredo Gem is part of todo-component gemspec.
+3. Tredo Gem is part of todo-component gemspec.
 
 ### Key Resources
 
